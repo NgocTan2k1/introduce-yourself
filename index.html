@@ -31,6 +31,7 @@
     <!-- CSS Customize -->
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
+
   <body class="body__wrapper">
     <!-- JS Bootstrap CDN -->
     <script
@@ -114,17 +115,29 @@
       </nav>
     </header>
     <main class="container px-4 px-sm-0">
-      <!-- About Area -->
-      <section id="about" class="introduce row g-2">
-        <div class="introduce__img col-xl-5 col-md-4 col-sm-4">
-          <img class="" src="./assets/img/favicon.jpg" alt="img-introduce" />
+      <!-- Introduce Area -->
+      <section
+        id="introduce"
+        class="introduce row g-2 col-xl-10 col-lg-10 col-md-8 col-sm-8"
+      >
+        <div
+          class="introduce__img mx-auto col-xl-5 col-lg-6 col-md-12 col-sm-8"
+        >
+          <img
+            class="w-md-50"
+            src="./assets/img/favicon.jpg"
+            alt="img-introduce"
+          />
         </div>
-        <div class="introduce__info col-xl-7 col-md-8">
+
+        <div class="introduce__info col-xl-7 col-lg-6 col-md-12">
           <ul class="infor__list row text-center gap-2">
             <li class="infor__item col-12 my-1">
               <h3 class="mb-0">Hi, I'm</h3>
             </li>
-            <li class="infor__item col-12 my-1"><h2 class="mb-0">Taan</h2></li>
+            <li class="infor__item col-12 my-1">
+              <h2 class="mb-0">Taan</h2>
+            </li>
             <li class="infor__item col-12 my-1">
               <h4 class="mb-0">FullStack Developer</h4>
             </li>
@@ -153,42 +166,26 @@
         </div>
       </section>
 
-      <!-- Experience Area -->
-      <section id="experience" class="introduce row g-2">
-        <div class="introduce__img col-xl-5 col-md-4 col-sm-4">
+      <!-- About Area -->
+      <section
+        id="about"
+        class="row g-2 col-xl-12 col-lg-12 col-md-10 col-sm-10 mx-auto"
+      >
+        <div class="title">
+          <h2 class="title--text text-center">About Me</h2>
+        </div>
+        <div class="about__img mx-auto col-xl-3 col-lg-4 col-md-12 col-sm-10">
           <img class="" src="./assets/img/favicon.jpg" alt="img-introduce" />
         </div>
-        <div class="introduce__info col-xl-7 col-md-8">
+        <div class="about__info col-xl-9 col-lg-8 col-md-12 col-sm-10">
           <ul class="infor__list row text-center gap-2">
-            <li class="infor__item col-12 my-1">
-              <h3 class="mb-0">Hi, I'm</h3>
-            </li>
-            <li class="infor__item col-12 my-1"><h2 class="mb-0">Taan</h2></li>
-            <li class="infor__item col-12 my-1">
-              <h4 class="mb-0">FullStack Developer</h4>
-            </li>
-            <li class="infor__item col-12 my-1">
-              <button class="btn btn-light border-dark mx-2">
-                Download CV
-              </button>
-              <button class="btn btn-dark border-dark mx-2">
-                Contact Info
-              </button>
-            </li>
-            <li
-              class="infor__item col-12 my-1 d-flex justify-content-center gap-3"
-            >
-              <a href="#" target="_blank" class="my-auto">
-                <i class="infor__item--contact fa-brands fa-github"></i>
-              </a>
-              <a href="#" target="_blank" class="my-auto">
-                <i class="infor__item--contact fa-brands fa-linkedin"></i>
-              </a>
-              <a href="#" target="_blank" class="my-auto">
-                <i class="infor__item--contact fa-brands fa-facebook"></i>
-              </a>
+            <li class="infor__item col-xl-6 col-md-8">
+              <div></div>
             </li>
           </ul>
+          <p class="about__description col-sm-12">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis reprehenderit et laborum, rem, dolore eum quod voluptate exercitationem nobis, nihil esse debitis maxime facere minus sint delectus velit in eos quo officiis explicabo deleniti dignissimos. Eligendi illum libero dolorum cum laboriosam corrupti quidem, reiciendis ea magnam? Nulla, impedit fuga!
+          </p>
         </div>
       </section>
     </main>
