@@ -20,6 +20,19 @@ html {
 body {
   font-family: "Poppins", sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
 
 /* Transition */
 
@@ -170,6 +183,15 @@ main section:first-child {
 #about {
   display: flex;
 }
+#about .title {
+  margin-bottom: 20px;
+}
+.section--text {
+  color: rgb(85, 85, 85);
+}
+.title--text {
+  font-size: 3rem;
+}
 .about__img img {
   display: flex;
   margin: 0 auto;
@@ -180,16 +202,50 @@ main section:first-child {
 .about__info {
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  gap: 4px;
 }
-
-.introduce__info ul {
+.infor__list {
   list-style: none;
   padding: 0;
-  margin: auto;
 }
-.infor__item .infor__item--contact {
-  font-size: 24px;
-  color: black;
+.infor__item .tag__info {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  height: 100%;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+}
+.tag__info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+.tag__title {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 4px;
+}
+.tag__title img {
+  height: 30px;
+  width: auto;
+}
+.tag__title strong {
+  font-size: 22px;
+}
+.tag__desc {
+  list-style: none;
+  color: rgb(85, 85, 85);
+}
+.tag__desc li {
+  margin: 2px auto;
 }
 
 /* Keyframe Customize */
