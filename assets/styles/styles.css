@@ -118,6 +118,7 @@ header.hidden {
   height: 4px;
   background-color: black;
   transition: right 0.5s ease, width 0.5s ease;
+  z-index: 102;
 }
 .collapse.show .dropdown-toggle::after {
   display: inline-block;
@@ -128,15 +129,18 @@ header.hidden {
   border-right: 0;
   border-bottom: 0;
   border-left: 0;
+  z-index: 102;
 }
 .collapse.show .nav-link.active.dropdown-toggle.show::after {
   width: 100%;
   left: 0;
+  z-index: 102;
 }
 .collapse.show .nav-link.active:hover::after {
   width: 100%;
   right: 0;
   font-weight: 600;
+  z-index: 102;
 }
 
 /* Main CSS */
@@ -220,11 +224,14 @@ main section:first-child {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
+  background-color: white;
 }
 .tag__info:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   cursor: default;
+  z-index: 10 !important;
+  cursor: pointer;
 }
 .tag__title {
   display: flex;
@@ -233,7 +240,7 @@ main section:first-child {
   align-items: center;
   gap: 4px;
 }
-.tag__title img {
+.about__image {
   height: 30px;
   width: auto;
 }
@@ -247,7 +254,44 @@ main section:first-child {
 .tag__desc li {
   margin: 2px auto;
 }
+.about__description {
+  font-size: 20px;
+}
+.about__description i {
+  font-size: 24px;
+}
+.about__description span {
+  font-size: 16px;
+  cursor: default;
+}
+/* ===== About Modal ======*/
+.about__modal .modal-header strong {
+  font-size: 22px;
+}
+.modal-body p {
+  padding: 8px;
+}
+.modal-body p:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border-radius: 4px;
+}
 
+/* Education */
+.modal-body-education {
+  flex-direction: column;
+  color: black;
+}
+/* Experience */
+.modal-body-experience {
+  flex-direction: column;
+  color: black;
+}
+/* Strengths */
+.modal-body-strength {
+  flex-direction: column;
+  color: black;
+}
 /* Keyframe Customize */
 @keyframes fadeOutNavbar {
   0% {

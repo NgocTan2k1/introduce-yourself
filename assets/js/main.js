@@ -92,7 +92,10 @@ document.body.addEventListener("click", function (event) {
 /* Event Wheel*/
 document.body.addEventListener("wheel", (event) => {
   // console.log("Event Wheel", event);
-
+  const modalElement = document.querySelector(".modal.show");
+  if (modalElement) {
+    return;
+  }
   // close the navbar
   closeNavItem();
 
@@ -136,5 +139,5 @@ navbarItemElement.forEach((element) => {
 const setNavbarTimeout = () => {
   navbarHiddenTimeoutId = setTimeout(() => {
     isNavbarHidden = false;
-  }, 200);
+  }, 500);
 };

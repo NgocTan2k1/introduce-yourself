@@ -41,6 +41,136 @@
     ></script>
     <!-- JS Customize -->
     <script src="./assets/js/main.js" defer></script>
+    <!-- Modal -->
+    <!-- Education About Modal -->
+    <div
+      class="modal fade about__modal"
+      id="about__education--modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="true"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-dismiss="modal"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center gap-2">
+            <img
+              class="about__image"
+              src="./assets/img/education-icon-light.png"
+              alt="certificate-icon"
+            />
+            <strong>Education</strong>
+          </div>
+          <div class="modal-body modal-body-education gap-1 d-flex">
+            <p>
+              Since 2019, I was starting to study at the University of
+              Sciences(HCMUS), Vietnam National University, Ho Chi Minh
+              City(VNU-HCM).
+            </p>
+            <p>
+              During my time at university, I had learned many things from soft
+              skills, specialized knowledge, life skills, participating in many
+              activities here and so on.
+            </p>
+            <p>
+              By January 2024, I had completed the school's training program
+              after 4 and a half years of studying here with my major in the
+              Information Security. In July 2024, the university degree had been
+              handed to me after I completed the university program.
+            </p>
+            <p>
+              Each step I had been going through has left me with many beautiful
+              memories in my life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience About Modal -->
+    <div
+      class="modal fade about__modal"
+      id="about__experience--modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="true"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-dismiss="modal"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center gap-2">
+            <img
+              class="about__image"
+              src="./assets/img/certificate-icon-light.png"
+              alt="certificate-icon"
+            />
+            <strong>Experience</strong>
+          </div>
+          <div class="modal-body modal-body-experience gap-1 d-flex">
+            <p>
+              While still in school, in addition to the knowledge learned at
+              school, I had researched and learned about a web developer
+              <a href="https://fullstack.edu.vn/@tanphamngoc" target="_blank">
+                https://fullstack.edu.vn/@tanphamngoc
+              </a>
+            </p>
+            <p>
+              In July 2023, I had the opportunity to become an intern at the
+              company A as a front-end developer. I was accepted by the company
+              as an official employee after 3 months of the internship. After 3
+              months of working, I started to learn more about back-end and then
+              after 3 months of the hard work and learning. I started to become
+              a full-stack developer.
+            </p>
+            <p>
+              Besides, I also learned about Cloud-AWS such as EC2, RDS, Cloud9,
+              CloudFront and so on since I started working at the company.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strengths About Modal -->
+    <div
+      class="modal fade about__modal"
+      id="about__strengths--modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="true"
+      tabindex="-1"
+      aria-hidden="true"
+      data-bs-dismiss="modal"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center gap-2 d-flex">
+            <img
+              class="about__image"
+              src="./assets/img/strengths-icon-light.png"
+              alt="certificate-icon"
+            />
+            <strong>Strengths</strong>
+          </div>
+          <div class="modal-body modal-body-strength gap-1 d-flex">
+            <p>
+              Participating in university activities has helped me become more
+              confident in standing in front of a crowd and expressing my
+              opinions.
+            </p>
+            <p>
+              Self-study is a strength that I am most confident about myself. I
+              can learn and apply a new technology quickly
+            </p>
+            <p>Loving sports is also a part of my life.</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page Header -->
     <header class="header px-4">
       <nav class="navbar navbar-expand-md bg-white p-0">
         <div class="navbar__container container border rounded">
@@ -114,6 +244,8 @@
         </div>
       </nav>
     </header>
+
+    <!-- Page Content -->
     <main class="container px-4 px-sm-0">
       <!-- Introduce Area -->
       <section
@@ -152,13 +284,21 @@
             <li
               class="infor__item col-12 my-1 d-flex justify-content-center gap-3"
             >
-              <a href="#" target="_blank" class="my-auto">
+              <a
+                href="https://github.com/NgocTan2k1"
+                target="_blank"
+                class="my-auto"
+              >
                 <i class="infor__item--contact fa-brands fa-github"></i>
               </a>
               <a href="#" target="_blank" class="my-auto">
                 <i class="infor__item--contact fa-brands fa-linkedin"></i>
               </a>
-              <a href="#" target="_blank" class="my-auto">
+              <a
+                href="https://www.facebook.com/taan.k19"
+                target="_blank"
+                class="my-auto"
+              >
                 <i class="infor__item--contact fa-brands fa-facebook"></i>
               </a>
             </li>
@@ -180,10 +320,15 @@
         </div>
         <div class="about__info col-xl-8 col-lg-8 col-md-12 col-sm-10">
           <ul class="infor__list row text-center gy-2 justify-content-center">
-            <li class="infor__item col-lg-4 col-md-10">
+            <li
+              class="infor__item col-lg-4 col-md-10"
+              data-bs-toggle="modal"
+              data-bs-target="#about__education--modal"
+            >
               <div class="tag__info">
                 <div class="tag__title">
                   <img
+                    class="about__image"
                     src="./assets/img/education-icon-light.png"
                     alt="certificate-icon"
                   />
@@ -194,10 +339,15 @@
                 </ul>
               </div>
             </li>
-            <li class="infor__item col-lg-4 col-md-10">
+            <li
+              class="infor__item col-lg-4 col-md-10"
+              data-bs-toggle="modal"
+              data-bs-target="#about__experience--modal"
+            >
               <div class="tag__info">
                 <div class="tag__title">
                   <img
+                    class="about__image"
                     src="./assets/img/certificate-icon-light.png"
                     alt="certificate-icon"
                   />
@@ -209,10 +359,15 @@
                 </ul>
               </div>
             </li>
-            <li class="infor__item col-lg-4 col-md-10">
+            <li
+              class="infor__item col-lg-4 col-md-10"
+              data-bs-toggle="modal"
+              data-bs-target="#about__strengths--modal"
+            >
               <div class="tag__info">
                 <div class="tag__title">
                   <img
+                    class="about__image"
                     src="./assets/img/strengths-icon-light.png"
                     alt="certificate-icon"
                   />
@@ -220,22 +375,29 @@
                 </div>
                 <ul class="tag__desc">
                   <li>Good communication</li>
-                  <li>Learn quickly a new Technology</li>
+                  <li>Good self-study ability</li>
                 </ul>
               </div>
             </li>
           </ul>
-          <p class="about__description mt-2 col-sm-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-            reprehenderit et laborum, rem, dolore eum quod voluptate
-            exercitationem nobis, nihil esse debitis maxime facere minus sint
-            delectus velit in eos quo officiis explicabo deleniti dignissimos.
-            Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-            reiciendis ea magnam? Nulla, impedit fuga!
-          </p>
+
+          <div class="about__description mt-2 col-sm-12">
+            <i class="fa-regular fa-hand"></i>
+            Hello!,
+            <span>
+              I'm Taan, a person full of enthusiasm and passion for website
+              development. I believe that hard work and perseverance are the
+              keys to achieving success. Always looking for opportunities to
+              learn and develop, I am not afraid to face challenges. With a
+              positive personality and a progressive spirit, I look forward to
+              contributing my value to the team.
+            </span>
+          </div>
         </div>
       </section>
     </main>
+
+    <!-- Footer Page -->
     <footer class="footer"></footer>
   </body>
 </html>
