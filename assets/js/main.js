@@ -2,6 +2,7 @@ let collapse;
 let scrollPosition = 0;
 let isNavbarHidden = false;
 let navbarHiddenTimeoutId;
+let navbarShowTimeoutId;
 
 const headerElement = document.querySelector(".header");
 const navbarContainer = document.querySelector(".navbar__container");
@@ -25,11 +26,18 @@ const closeNavItem = () => {
  */
 const hiddenNavbar = (hidden) => {
   const headerElement = document.querySelector(".header");
-
   if (hidden) {
-    headerElement.classList.add("hidden");
+    if (scrollPosition !== 0) {
+      headerElement.classList.add("hidden");
+    }
+
+    headerElement.classList.remove("show");
     headerElement.style.top = `${scrollPosition - 60}px`;
   } else {
+    if (scrollPosition !== 0) {
+      headerElement.classList.add("show");
+    }
+
     headerElement.classList.remove("hidden");
     headerElement.style.top = `${scrollPosition - 60}px`;
   }
@@ -62,15 +70,21 @@ window.addEventListener("scroll", (event) => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   // check scroll up or scroll down
-  // deltaY < 0: scroll up
-  // deltaY > 0: scroll down
+  // scrollTop < scrollPosition: scroll up
+  // scrollTop > scrollPosition: scroll down
   if (scrollTop > scrollPosition) {
     hiddenNavbar(true);
     setNavbarTimeout();
   } else {
     if (!isNavbarHidden) {
-      hiddenNavbar(false);
       clearTimeout(navbarHiddenTimeoutId);
+      if (navbarShowTimeoutId) {
+        hiddenNavbar(true);
+        clearTimeout(navbarShowTimeoutId);
+        navbarShowTimeoutId = null;
+      }
+
+      setNavbarTimeout(true);
     } else {
       hiddenNavbar(true);
       setNavbarTimeout();
@@ -110,8 +124,14 @@ document.body.addEventListener("wheel", (event) => {
     setNavbarTimeout();
   } else {
     if (!isNavbarHidden) {
-      hiddenNavbar(false);
       clearTimeout(navbarHiddenTimeoutId);
+      if (navbarShowTimeoutId) {
+        hiddenNavbar(true);
+        clearTimeout(navbarShowTimeoutId);
+        navbarShowTimeoutId = null;
+      }
+
+      setNavbarTimeout(true);
     } else {
       hiddenNavbar(true);
       setNavbarTimeout();
@@ -136,8 +156,14 @@ navbarItemElement.forEach((element) => {
 /**
  * function set
  */
-const setNavbarTimeout = () => {
-  navbarHiddenTimeoutId = setTimeout(() => {
-    isNavbarHidden = false;
-  }, 500);
+const setNavbarTimeout = (show) => {
+  if (!show) {
+    navbarHiddenTimeoutId = setTimeout(() => {
+      isNavbarHidden = false;
+    }, 200);
+  } else {
+    navbarShowTimeoutId = setTimeout(() => {
+      hiddenNavbar(false);
+    }, 200);
+  }
 };

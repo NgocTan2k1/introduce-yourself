@@ -51,7 +51,9 @@ header {
   position: absolute;
   top: -60px;
   width: 100%;
-  animation: fadeInNavbar 0.2s ease-out forwards;
+}
+.header.show {
+  animation: fadeInNavbar 0.2s ease forwards;
 }
 header.hidden {
   top: -60px;
@@ -311,8 +313,8 @@ main section:first-child {
     top: -100%;
     opacity: 0;
   }
-  80% {
-    top: -20%;
+  50% {
+    top: -50%;
     opacity: 0;
   }
   100% {
