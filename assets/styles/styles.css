@@ -196,7 +196,7 @@ main section:first-child {
   color: rgb(85, 85, 85);
 }
 .title--text {
-  font-size: 3rem;
+  font-size: 48px;
 }
 .about__img img {
   display: flex;
