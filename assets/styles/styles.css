@@ -52,13 +52,6 @@ header {
   top: -60px;
   width: 100%;
 }
-.header.show {
-  animation: fadeInNavbar 0.2s ease forwards;
-}
-header.hidden {
-  top: -60px;
-  animation: fadeOutNavbar 0.3s ease-out forwards;
-}
 .navbar__container:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -75,6 +68,28 @@ header.hidden {
 }
 .nav-link.active:hover {
   font-weight: 500;
+}
+.nav__button {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: 2%;
+  bottom: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  z-index: 9999;
+}
+
+.nav__button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 /* Expand Navbar Transition*/
@@ -231,7 +246,6 @@ main section:first-child {
 .tag__info:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  cursor: default;
   z-index: 10 !important;
   cursor: pointer;
 }
