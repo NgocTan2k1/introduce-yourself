@@ -20,30 +20,6 @@ const closeNavItem = () => {
     navbarBtn.click();
   }
 };
-/**
- * function hidden or show navbar
- * @param { boolean } hidden
- */
-const hiddenNavbar = (hidden) => {
-  const headerElement = document.querySelector(".header");
-  if (hidden) {
-    if (scrollPosition !== 0) {
-      headerElement.classList.add("hidden");
-    }
-
-    headerElement.classList.remove("show");
-    headerElement.style.top = `${scrollPosition - 60}px`;
-  } else {
-    if (scrollPosition !== 0) {
-      headerElement.classList.add("show");
-    }
-
-    headerElement.classList.remove("hidden");
-    headerElement.style.top = `${scrollPosition - 60}px`;
-  }
-
-  hiddenSubNavbarItem();
-};
 
 /**
  * function close sub navbar item
@@ -60,11 +36,11 @@ const hiddenSubNavbarItem = () => {
 window.addEventListener("scroll", (event) => {
   // console.log("Event Scroll", event);
 
-  // close the navbar
+  // close the navbar collapse
   closeNavItem();
 
-  // clear timeout fn
-  clearTimeout(navbarHiddenTimeoutId);
+  // close the navber item
+  hiddenSubNavbarItem();
 
   // get position
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -73,22 +49,7 @@ window.addEventListener("scroll", (event) => {
   // scrollTop < scrollPosition: scroll up
   // scrollTop > scrollPosition: scroll down
   if (scrollTop > scrollPosition) {
-    hiddenNavbar(true);
-    setNavbarTimeout();
   } else {
-    if (!isNavbarHidden) {
-      clearTimeout(navbarHiddenTimeoutId);
-      if (navbarShowTimeoutId) {
-        hiddenNavbar(true);
-        clearTimeout(navbarShowTimeoutId);
-        navbarShowTimeoutId = null;
-      }
-
-      setNavbarTimeout(true);
-    } else {
-      hiddenNavbar(true);
-      setNavbarTimeout();
-    }
   }
 
   scrollPosition = scrollTop;
@@ -110,32 +71,18 @@ document.body.addEventListener("wheel", (event) => {
   if (modalElement) {
     return;
   }
-  // close the navbar
+
+  // close the navbar collapse
   closeNavItem();
 
-  // clear timeout fn
-  clearTimeout(navbarHiddenTimeoutId);
+  // close the navber item
+  hiddenSubNavbarItem();
 
   // check wheel up or wheel down
   // deltaY < 0: wheel up
   // deltaY > 0: wheel down
   if (event.deltaY > 0) {
-    hiddenNavbar(true);
-    setNavbarTimeout();
   } else {
-    if (!isNavbarHidden) {
-      clearTimeout(navbarHiddenTimeoutId);
-      if (navbarShowTimeoutId) {
-        hiddenNavbar(true);
-        clearTimeout(navbarShowTimeoutId);
-        navbarShowTimeoutId = null;
-      }
-
-      setNavbarTimeout(true);
-    } else {
-      hiddenNavbar(true);
-      setNavbarTimeout();
-    }
   }
 });
 
@@ -153,17 +100,3 @@ navbarItemElement.forEach((element) => {
 });
 
 /* =========== Async await Fn =========== */
-/**
- * function set
- */
-const setNavbarTimeout = (show) => {
-  if (!show) {
-    navbarHiddenTimeoutId = setTimeout(() => {
-      isNavbarHidden = false;
-    }, 200);
-  } else {
-    navbarShowTimeoutId = setTimeout(() => {
-      hiddenNavbar(false);
-    }, 200);
-  }
-};
