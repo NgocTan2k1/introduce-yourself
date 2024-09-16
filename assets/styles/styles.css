@@ -56,6 +56,7 @@ header {
   position: absolute;
   top: -60px;
   width: 100%;
+  z-index: 100;
 }
 .navbar__container:hover {
   transform: translateY(-5px);
@@ -175,7 +176,7 @@ main.container {
 }
 main section {
   position: relative;
-  height: 100vh;
+  height: auto;
 }
 main section:first-child {
   padding-top: 8px;
@@ -187,8 +188,8 @@ main section:first-child {
 .button--next__section {
   position: absolute;
   width: fit-content;
-  bottom: 8%;
-  right: 0;
+  bottom: 0;
+  right: -5%;
 }
 .button--next__section img {
   width: 20px;
@@ -367,5 +368,11 @@ main section:first-child {
   .navbar__container:hover {
     transform: translateY(0px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+  }
+}
+
+@media (min-width: 1280px) {
+  main section {
+    height: 100vh;
   }
 }

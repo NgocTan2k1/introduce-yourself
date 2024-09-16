@@ -53,6 +53,13 @@ window.addEventListener("scroll", (event) => {
   }
 
   scrollPosition = scrollTop;
+
+  const navButton = document.querySelector(".nav__button");
+  if (scrollPosition > window.innerHeight) {
+    navButton.style.display = "none";
+  } else {
+    navButton.style.display = "flex";
+  }
 });
 
 /* ========== Event Listener ========== */
@@ -83,6 +90,13 @@ document.body.addEventListener("wheel", (event) => {
   // deltaY > 0: wheel down
   if (event.deltaY > 0) {
   } else {
+  }
+
+  const navButton = document.querySelector(".nav__button");
+  if (scrollPosition > window.innerHeight) {
+    navButton.style.display = "none";
+  } else {
+    navButton.style.display = "flex";
   }
 });
 
