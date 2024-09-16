@@ -53,12 +53,12 @@ window.addEventListener("scroll", (event) => {
   }
 
   scrollPosition = scrollTop;
-
+  console.log(scrollPosition);
   const navButton = document.querySelector(".nav__button");
   if (scrollPosition > window.innerHeight) {
-    navButton.style.display = "none";
-  } else {
     navButton.style.display = "flex";
+  } else {
+    navButton.style.display = "none";
   }
 });
 
@@ -94,9 +94,9 @@ document.body.addEventListener("wheel", (event) => {
 
   const navButton = document.querySelector(".nav__button");
   if (scrollPosition > window.innerHeight) {
-    navButton.style.display = "none";
-  } else {
     navButton.style.display = "flex";
+  } else {
+    navButton.style.display = "none";
   }
 });
 
