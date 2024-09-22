@@ -189,7 +189,7 @@ main section:first-child {
   position: absolute;
   width: fit-content;
   bottom: 0;
-  right: -5%;
+  right: 0;
 }
 .button--next__section img {
   width: 20px;
@@ -229,12 +229,14 @@ main section:first-child {
 /* ========== About CSS ========== */
 #about {
   display: flex;
+  padding-bottom: 20px;
 }
 #about .title {
   margin-bottom: 20px;
 }
 .title--text {
-  font-size: 48px;
+  font-size: 3rem;
+  font-weight: bold;
 }
 .about__img img {
   display: flex;
@@ -333,7 +335,77 @@ main section:first-child {
 }
 
 /* ========== Experience ========== */
+#experience {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 20px;
+}
+#experience .title {
+  height: fit-content;
+}
+.experience__info {
+  justify-content: center;
+  gap: 20px;
+  margin: 4px auto;
+}
+.experience__tag {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+}
+.tag__title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+.experience__tag .tag__list {
+  justify-content: space-evenly;
+  list-style: none;
+  text-align: left;
+  margin: 2rem 0;
+  gap: 2rem 0;
+}
 
+.tag__list .tag__item {
+  display: flex;
+  width: 10rem;
+  gap: 0.5rem;
+  cursor: default;
+}
+.tag__item img {
+  height: 2rem;
+}
+.tag__item h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+  margin: 0;
+}
+.tag__item p {
+  color: rgb(85, 85, 85);
+}
+.experience__tag strong {
+  display: block;
+  text-align: right;
+  width: 100%;
+  padding-right: 20px;
+}
+.experience__tag strong:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transform: translateY(-20%);
+}
 /* ========== Keyframe Customize ========== */
 @keyframes fadeOutNavbar {
   0% {
